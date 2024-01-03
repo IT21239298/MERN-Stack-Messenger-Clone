@@ -8,13 +8,13 @@ const Form = () => {
         Sign up to now to get started
       </div>
       <Input
-        label="Full name"
+        label="Full Name"
         name="name"
         placeholder="Enter your name"
         className="mb-6"
       />
       <Input
-        label="Email address"
+        label="Email Address"
         name="email"
         placeholder="Enter your email"
         className="mb-6"
