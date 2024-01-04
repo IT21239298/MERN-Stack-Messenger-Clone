@@ -18,16 +18,16 @@ const Form = () => {
         label="Email Address"
         name="email"
         placeholder="Enter your email"
-        className="mb-6"
+        className="mb-6 "
       />
       <Input
         label="Password"
         type="password"
         name="password"
         placeholder="Enter your name"
-        className="mb-6"
+        className="mb-14"
       />
-      <Button label="Sign up" />
+      <Button label="Sign up" className="w-1/2" />
     </div>
   );
 };
