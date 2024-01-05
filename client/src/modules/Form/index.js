@@ -27,7 +27,7 @@ const Form = () => {
         placeholder="Enter your name"
         className="mb-14"
       />
-      <Button label="Sign up" className="w-60" />
+      <Button label="Sign up" className="w-1/2" />
     </div>
   );
 };
