@@ -27,7 +27,10 @@ const Form = () => {
         placeholder="Enter your name"
         className="mb-14"
       />
-      <Button label="Sign up" className="w-1/2" />
+      <Button label="Sign up" className="w-1/2 mb-2" />
+      <div>Alredy have an account? <span className="text-primary cursor-pointer underline">Sign in</span></div>
+
+
     </div>
   );
 };
