@@ -21,7 +21,7 @@ const Input = ({
         id={name}
         className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm 
             rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full px-16 py-2.5
-            dark:focus:border-blue-500 ${className}`}
+            dark:focus:border-blue-400 ${className}`}
         placeholder={placeholder}
         required={isRequired}
       />
