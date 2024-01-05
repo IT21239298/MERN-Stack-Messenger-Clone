@@ -1,10 +1,12 @@
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
-const Form = () => {
+const Form = ({
+  isSignInPage= true,
+ }) => {
   return (
     <div className="bg-white w-[600px] h-[800px] shadow-lg rounded-lg flex flex-col justify-center items-center">
-      <div className=" text-4xl font-extrabold">Welcome</div>
+      <div className=" text-4xl font-extrabold">Welcome {isSignInPage && 'Back'}</div>
       <div className=" text-xl font-light mb-14">
         Sign up to now to get started
       </div>
