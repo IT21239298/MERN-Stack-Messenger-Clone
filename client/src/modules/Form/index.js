@@ -30,6 +30,7 @@ const Form = ({ isSignInPage = false,
           placeholder="Enter your name"
           className="mb-6"
           value={data.fulName}
+          onChange={(e) => setData({...data, fulName:e.target.value})}
         />
       )}
       <Input
@@ -38,6 +39,7 @@ const Form = ({ isSignInPage = false,
         placeholder="Enter your email"
         className="mb-6 "
         value={data.email}
+        onChange={(e) => setData({...data, email:e.target.value})}
       />
       <Input
         label="Password"
@@ -46,6 +48,7 @@ const Form = ({ isSignInPage = false,
         placeholder="Enter your name"
         className="mb-14"
         value={data.password}
+        onChange={(e) => setData({...data, password:e.target.value})}
       />
       <Button
         label={isSignInPage ? "Sign in" : "Sign up"}
