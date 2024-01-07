@@ -7,6 +7,8 @@ const Input = ({
   className = "",
   isRequired = false,
   placeholder = "",
+  value = "",
+  onChange = () => {},
 }) => {
   return (
     <div>
@@ -24,6 +26,8 @@ const Input = ({
             dark:focus:border-blue-400 ${className}`}
         placeholder={placeholder}
         required={isRequired}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

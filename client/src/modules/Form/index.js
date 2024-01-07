@@ -1,7 +1,18 @@
+import { useState } from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
-const Form = ({ isSignInPage = true }) => {
+const Form = ({ isSignInPage = false,
+
+}) => {
+
+  const [data, setData] = useState({
+    ...(!isSignInPage && {
+      fulName:''
+    }),
+    email: '',
+    password: ''
+  })
   return (
     <div className="bg-white w-[600px] h-[800px] shadow-lg rounded-lg flex flex-col justify-center items-center">
       <div className=" text-4xl font-extrabold">
@@ -18,6 +29,7 @@ const Form = ({ isSignInPage = true }) => {
           name="name"
           placeholder="Enter your name"
           className="mb-6"
+          value={data.fulName}
         />
       )}
       <Input
@@ -25,6 +37,7 @@ const Form = ({ isSignInPage = true }) => {
         name="email"
         placeholder="Enter your email"
         className="mb-6 "
+        value={data.email}
       />
       <Input
         label="Password"
@@ -32,6 +45,7 @@ const Form = ({ isSignInPage = true }) => {
         name="password"
         placeholder="Enter your name"
         className="mb-14"
+        value={data.password}
       />
       <Button
         label={isSignInPage ? "Sign in" : "Sign up"}
