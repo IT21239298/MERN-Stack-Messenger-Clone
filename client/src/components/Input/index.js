@@ -5,7 +5,7 @@ const Input = ({
   name = "",
   type = "text",
   className = "",
-  isRequired = false,
+  isRequired = true,
   placeholder = "",
   value = "",
   onChange = () => {},
