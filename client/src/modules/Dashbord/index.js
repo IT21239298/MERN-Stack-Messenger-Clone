@@ -7,8 +7,8 @@ const Dashbord = () => {
         <div className="w-[25%] border border-black h-screen bg-secondary">
             <div className="flex justify-center items-center">
                 <img src={Avatar} width={75} height={75}/>
-                <div>
-                    <h3>Tutorial Dv</h3>
+                <div className="ml-8">
+                    <h3 className="text-2xl">Tutorial Dv</h3>
                     <p>my account</p>
                 </div>
             </div>
