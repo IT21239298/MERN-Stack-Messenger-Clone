@@ -2,6 +2,40 @@ import React from "react";
 import Avatar from "../../assets/avatar.svg"
 
 const Dashbord = () => {
+
+  const contacts = [
+    {
+      name: 'John',
+      status:'Availale',
+      img:Avatar
+    },
+    {
+      name: 'Mary',
+      status:'Availale',
+      img:Avatar
+    },
+    {
+      name: 'Alexander',
+      status:'Availale',
+      img:Avatar
+    },
+    {
+      name: 'Adam',
+      status:'Availale',
+      img:Avatar
+    },
+    {
+      name: 'Amal',
+      status:'Availale',
+      img:Avatar
+    },
+    {
+      name: 'Nipun ',
+      status:'Availale',
+      img:Avatar
+    },
+  
+  ]
   return (
     <div className="w-screen flex">
         <div className="w-[25%]  h-screen bg-secondary">
@@ -12,6 +46,18 @@ const Dashbord = () => {
                     <p className="text-lg font-light">my account</p>
                 </div>
             </div>
+            <hr/> 
+            <div>
+              <div>Message</div>
+              <div>
+                {
+                  contacts.map(() => {
+                    return
+                  })
+                }
+              </div>
+            </div>
+
         </div>
         <div className="w-[50%] border h-screen"> </div>
         <div className="w-[25%] border h-screen"> </div>
