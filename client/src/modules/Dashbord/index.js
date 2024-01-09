@@ -69,8 +69,13 @@ const Dashbord = () => {
             </div>
 
         </div>
-        <div className="w-[50%] border h-screen"> </div>
-        <div className="w-[25%] border h-screen"> </div>
+        <div className="w-[50%] h-screen bg-white flex flex-col items-center"> 
+           <div className="w-[75%] bg-secondary h-[80px] mt-14 rounded-full flex items-center px-14">
+           <div className=""><img src={Avatar} width={60} height={60}/></div>
+            <h3 className="text-lg font-semibold">Alexander</h3>
+           </div>
+        </div>
+        <div className="w-[25%]  h-screen"> </div>
     </div>
    
   )
