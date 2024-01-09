@@ -51,8 +51,16 @@ const Dashbord = () => {
               <div>Message</div>
               <div>
                 {
-                  contacts.map(() => {
-                    return
+                  contacts.map(({name,status,img}) => {
+                    return(
+                      <div className="flex  items-center my-8">
+                      <div className="border border-primary p-[2px] rounded-full"><img src={img} width={75} height={75}/></div>
+                      <div className="ml-8">
+                          <h3 className="text-2xl">{name}</h3>
+                          <p className="text-lg font-light">{status}</p>
+                      </div>
+                  </div>
+                    )
                   })
                 }
               </div>
