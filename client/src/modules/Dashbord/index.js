@@ -100,8 +100,25 @@ const Dashbord = () => {
           </div>
         </div>
         <div className="h-[75%] border w-full overflow-scroll">
-          <div className="h-[1000px] px-10 py-14">
-            <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl"></div>
+          <div className=" p-14">
+            <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6">
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+            </div>
+            <div className="h-[80px] w-[300px] bg-primary rounded-b-xl rounded-tl-xl ml-auto p-4 text-white">
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+            </div>
+            <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6">
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+            </div>
+            <div className="h-[80px] w-[300px] bg-primary rounded-b-xl rounded-tl-xl ml-auto p-4 text-white">
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+            </div>
+            <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6">
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+            </div>
+            <div className="h-[80px] w-[300px] bg-primary rounded-b-xl rounded-tl-xl ml-auto p-4 text-white">
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+            </div>
           </div>
 
         </div>
