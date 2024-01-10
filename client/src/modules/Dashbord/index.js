@@ -1,5 +1,6 @@
 import React from "react";
 import Avatar from "../../assets/avatar.svg";
+import Input from "../../components/Input";
 
 const Dashbord = () => {
   const contacts = [
@@ -99,28 +100,36 @@ const Dashbord = () => {
             </svg>
           </div>
         </div>
-        <div className="h-[75%] border w-full overflow-scroll">
+        <div className="h-[75%] w-full overflow-scroll border-b">
           <div className=" p-14">
             <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6">
-              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb
+              iwebfwifb we
             </div>
             <div className="h-[80px] w-[300px] bg-primary rounded-b-xl rounded-tl-xl ml-auto p-4 text-white">
-              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb
+              iwebfwifb we
             </div>
             <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6">
-              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb
+              iwebfwifb we
             </div>
             <div className="h-[80px] w-[300px] bg-primary rounded-b-xl rounded-tl-xl ml-auto p-4 text-white">
-              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb
+              iwebfwifb we
             </div>
             <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6">
-              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb
+              iwebfwifb we
             </div>
             <div className="h-[80px] w-[300px] bg-primary rounded-b-xl rounded-tl-xl ml-auto p-4 text-white">
-              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb iwebfwifb we
+              sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb
+              iwebfwifb we
             </div>
           </div>
-
+        </div>
+        <div className="p-14">
+          <Input placeholder="type a message..." />
         </div>
       </div>
       <div className="w-[25%]  h-screen"> </div>
