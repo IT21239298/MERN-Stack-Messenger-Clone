@@ -99,6 +99,12 @@ const Dashbord = () => {
             </svg>
           </div>
         </div>
+        <div className="h-[75%] border w-full overflow-scroll">
+          <div className="h-[1000px] px-10 py-14">
+            <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl"></div>
+          </div>
+
+        </div>
       </div>
       <div className="w-[25%]  h-screen"> </div>
     </div>
