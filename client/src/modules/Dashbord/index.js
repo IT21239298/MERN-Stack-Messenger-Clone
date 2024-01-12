@@ -130,7 +130,7 @@ const Dashbord = () => {
         </div>
         <div className="p-14 w-full">
           <Input placeholder="type a message..." inputClassName="p-4 border-1 shadow-md rounded-full bg-light fouce:ring-0
-          " />
+         focus:border-0 outline-none " />
         </div>
       </div>
       <div className="w-[25%]  h-screen"> </div>
