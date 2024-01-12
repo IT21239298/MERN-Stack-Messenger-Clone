@@ -128,7 +128,7 @@ const Dashbord = () => {
             </div>
           </div>
         </div>
-        <div className="p-14">
+        <div className="p-14 w-full">
           <Input placeholder="type a message..." />
         </div>
       </div>
