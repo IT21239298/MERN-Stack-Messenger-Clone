@@ -6,13 +6,11 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    
-    <div className="bg-[#edf3fc] h-screen flex justify-center items-center">
-      <Dashbord />
-      {/* <Form/> */}
-
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<Dashbord />} />
+      <Route path="/users/sign_in" element={<Form isSignInPage={true} />} />
+      <Route path="/users/sign_up" element={<Form isSignInPage={false} />} />
+    </Routes>
   );
 }
 
