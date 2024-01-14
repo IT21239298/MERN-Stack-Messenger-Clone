@@ -20,8 +20,8 @@ const navigate = useNavigate()
         </div>
         <div className=" text-xl font-light mb-14">
           {isSignInPage
-            ? "Sign in to get explored"
-            : "Sign up to get started"}
+            ? "Sign up to get started"
+            :  "Sign in to get explored"}
         </div>
         <form
           className="flex flex-col items-center w-full"
@@ -64,9 +64,9 @@ const navigate = useNavigate()
           type="submit"
         />
         <div>
-          {isSignInPage ? "Didn't havean account?" : "Alredy have an account?"}
+          {isSignInPage ? "Alredy have an account?" : "Didn't have an account?"}
           <span className="text-primary cursor-pointer underline" onClick={() => navigate(`/users/${isSignInPage ? 'sign_up' : 'sign_in'}`)}>
-            {isSignInPage ? "Sign up" : "Sign in"}
+            {isSignInPage ?  "Sign in": "Sign up"}
           </span>
         </div>
       </div>
