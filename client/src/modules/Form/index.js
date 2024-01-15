@@ -65,7 +65,7 @@ const navigate = useNavigate()
         />
         <div>
           {isSignInPage ? "Alredy have an account?" : "Didn't have an account?"}
-          <span className="text-primary cursor-pointer underline" onClick={() => navigate(`/users/${isSignInPage ? 'sign_up' : 'sign_in'}`)}>
+          <span className="text-primary cursor-pointer underline" onClick={() => navigate(`/users/${isSignInPage ? 'sign_in' : 'sign_up'}`)}>
             {isSignInPage ?  "Sign in": "Sign up"}
           </span>
         </div>
