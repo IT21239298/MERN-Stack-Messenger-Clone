@@ -72,7 +72,7 @@ const Dashbord = () => {
         </div>
       </div>
       <div className="w-[50%] h-screen bg-white flex flex-col items-center">
-        <div className="w-[75%] bg-secondary h-[80px] mt-14 rounded-full flex items-center px-14 ">
+        <div className="w-[75%] bg-secondary h-[80px] mt-14 rounded-full flex items-center px-14 shadow-lg  ">
           <div className="cursor-pointer">
             <img src={Avatar} width={60} height={60} />
           </div>
