@@ -100,9 +100,9 @@ const Dashbord = () => {
             </svg>
           </div>
         </div>
-        <div className="h-[75%] w-full overflow-y-auto border-b">
-          <div className=" p-14">
-            <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6">
+        <div className="h-[75%] w-full overflow-y-auto border-b ">
+          <div className=" p-14 shadow-lg">
+            <div className="h-[80px] w-[300px] bg-secondary rounded-b-xl rounded-tr-xl p-4 mb-6 ">
               sdibuifbfibflbweiubfwibbbfeifbfibffbw wefbweifbweif wefbifb
               iwebfwifb we
             </div>
