@@ -43,8 +43,8 @@ const Dashbord = () => {
             <img src={Avatar} width={75} height={75} />
           </div>
           <div className="ml-8">
-            <h3 className="text-2xl">Tutorial Dv</h3>
-            <p className="text-lg font-light">my account</p>
+            <h3 className="text-2xl font-bold">Tutorial Dv</h3>
+            <p className="text-lg  font-semibold">my account</p>
           </div>
         </div>
         <hr />
