@@ -80,7 +80,7 @@ const Dashbord = () => {
             <h3 className="text-lg ">Alexander</h3>
             <p className="text-sm font-light text-gray-600">online</p>
           </div>
-          <div className="cursor-pointer">
+          <div className="cursor-pointer shadow-lg rounded-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-phone-outgoing"
