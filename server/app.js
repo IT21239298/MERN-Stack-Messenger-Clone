@@ -1,5 +1,5 @@
 const express = require("express");
-
+//create connection 
 const app = express();
 
 require("./connection");
