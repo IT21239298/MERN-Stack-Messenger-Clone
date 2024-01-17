@@ -1,5 +1,5 @@
 import React from "react";
-
+//commen input label 
 const Input = ({
   label = "",
   name = "",
