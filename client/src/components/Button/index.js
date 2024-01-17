@@ -1,5 +1,5 @@
 import React from "react";
-
+//common button
 const Button = ({
   label = "Button",
   type = "button",
