@@ -25,7 +25,6 @@ export default function Maintenance() {
 
   //img style
   const styles = {
-    
     width: "150px",
     height: "150px",
     marginLeft: "220px",
@@ -61,30 +60,36 @@ export default function Maintenance() {
                 fontWeight: "bold",
                 fontFamily: "Raleway, Arial",
                 color: "#E5340E",
-                marginTop:'10px'
+                marginTop: "10px",
               }}
             >
-               Under Maintenance..!
+              Under Maintenance..!
             </Typography>
             <Typography
               variant="body1"
               paragraph
               sx={{
-                fontSize:"14px",
+                fontSize: "14px",
                 textAlign: "center",
                 fontWeight: "bold",
                 fontStyle: "italic",
-                color:'#454545'
+                color: "#454545",
               }}
             >
-              We apologize for the inconvenience.
-               The site is currently undergoing maintenance, but we'll be
-              back soon.
+              We apologize for the inconvenience. The site is currently
+              undergoing maintenance, but we'll be back soon.
             </Typography>
           </Grid>
-          
+
           <Grid>
-            <Typography sx={{ textAlign: "center", fontWeight: "bold",fontFamily: 'sans-serif',fontSize:"20px", }}>
+            <Typography
+              sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                fontFamily: "sans-serif",
+                fontSize: "20px",
+              }}
+            >
               Please check your access
             </Typography>
           </Grid>
@@ -92,7 +97,12 @@ export default function Maintenance() {
             <TextField id="filled-basic" label="Email" variant="filled" />
           </Grid>
           <Grid>
-            <TextField id="filled-basic" label="Password"   type="password" variant="filled" />
+            <TextField
+              id="filled-basic"
+              label="Password"
+              type="password"
+              variant="filled"
+            />
           </Grid>
           <DialogActions>
             <Button
