@@ -76,8 +76,8 @@ export default function Maintenance() {
               }}
             >
               We apologize for the inconvenience.
-              <br /> The site is currently undergoing maintenance, but we'll be
-              back soon.{" "}
+               The site is currently undergoing maintenance, but we'll be
+              back soon.
             </Typography>
           </Grid>
           
