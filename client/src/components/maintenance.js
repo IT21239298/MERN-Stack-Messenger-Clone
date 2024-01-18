@@ -28,7 +28,7 @@ export default function Maintenance() {
     
     width: "150px",
     height: "150px",
-    marginLeft: "200px",
+    marginLeft: "220px",
   };
 
   return (
@@ -49,6 +49,9 @@ export default function Maintenance() {
           noValidate
           autoComplete="off"
         >
+          <Grid>
+            <img alt="maintenance_img" src={maintenance_img} style={styles} />
+          </Grid>
           <Grid>
             <Typography
               variant="h4"
@@ -77,9 +80,7 @@ export default function Maintenance() {
               back soon.{" "}
             </Typography>
           </Grid>
-          <Grid>
-            <img alt="maintenance_img" src={maintenance_img} style={styles} />
-          </Grid>
+          
           <Grid>
             <Typography sx={{ textAlign: "center", fontWeight: "bold",fontFamily: 'sans-serif', }}>
               Please check your access
