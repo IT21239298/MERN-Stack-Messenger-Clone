@@ -108,7 +108,7 @@ export default function Maintenance() {
             <Button
               variant="contained"
               onClick={handleClose}
-              sx={{ marginRight: "220px", bgcolor:'CaptionText'}}
+              sx={{ marginRight: "220px", bgcolor:''}}
             >
               CheckOut
             </Button>
