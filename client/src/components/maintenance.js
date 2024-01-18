@@ -70,9 +70,11 @@ export default function Maintenance() {
               variant="body1"
               paragraph
               sx={{
+                fontSize:"14px",
                 textAlign: "center",
                 fontWeight: "bold",
                 fontStyle: "italic",
+                color
               }}
             >
               We apologize for the inconvenience.
