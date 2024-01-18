@@ -84,7 +84,7 @@ export default function Maintenance() {
           </Grid>
           
           <Grid>
-            <Typography sx={{ textAlign: "center", fontWeight: "bold",fontFamily: 'sans-serif', }}>
+            <Typography sx={{ textAlign: "center", fontWeight: "bold",fontFamily: 'sans-serif',fontSize:"20px", }}>
               Please check your access
             </Typography>
           </Grid>
