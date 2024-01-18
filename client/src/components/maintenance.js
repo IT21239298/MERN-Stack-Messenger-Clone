@@ -74,7 +74,7 @@ export default function Maintenance() {
                 textAlign: "center",
                 fontWeight: "bold",
                 fontStyle: "italic",
-                color:'#898989'
+                color:'#454545'
               }}
             >
               We apologize for the inconvenience.
