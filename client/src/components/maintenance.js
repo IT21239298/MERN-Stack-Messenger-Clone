@@ -116,7 +116,7 @@ export default function Maintenance() {
               onClick={handleClose}
               sx={{ margin: isMobile ? "auto" : "auto" }}
             >
-              CheckOut
+              Available
             </Button>
           </DialogActions>
         </Box>
