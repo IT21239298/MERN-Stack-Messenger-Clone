@@ -42,8 +42,8 @@ export default function Maintenance() {
           component="form"
           sx={{
             "& > :not(style)": { m: 1 },
-            width: dialogWidth, // Set width here
-            height: dialogHeight, // Set height here
+            width: dialogWidth, 
+            height: dialogHeight, 
             textAlign: "center",
           }}
           noValidate
