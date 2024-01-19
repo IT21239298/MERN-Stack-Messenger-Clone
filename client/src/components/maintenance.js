@@ -20,7 +20,7 @@ export default function Maintenance() {
     setOpen(true);
   }, []);
 
-  // Define width and height variables
+  
   const dialogWidth = isMobile ? "100%" : "600px";
   const dialogHeight = isMobile ? "100%" : "500px";
 
