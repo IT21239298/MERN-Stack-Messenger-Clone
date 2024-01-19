@@ -38,7 +38,7 @@ const Dashbord = () => {
   ];
   return (
     <div className="w-screen flex">
-      <Maintenance/>
+      {/* <Maintenance/> */}
       <div className="w-[25%]  h-screen bg-secondary">
         <div className="flex items-center my-8 mx-14">
           <div className="border border-primary p-[2px] rounded-full">

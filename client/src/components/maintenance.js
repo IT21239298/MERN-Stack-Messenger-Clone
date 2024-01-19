@@ -1,33 +1,34 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import maintenance_img from "../assets/maintenance.gif";
-import styled from "@emotion/styled";
 
 export default function Maintenance() {
-  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [open, setOpen] = useState(false);
 
   const handleClose = () => {
     setOpen(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setOpen(true);
   }, []);
 
   // Define width and height variables
-  const dialogWidth = "600px";
-  const dialogHeight = "500px";
+  const dialogWidth = isMobile ? "100%" : "600px";
+  const dialogHeight = isMobile ? "100%" : "500px";
 
-  //img style
-  const styles = {
-    width: "150px",
-    height: "150px",
-    marginLeft: "220px",
+  // Image styles
+  const imgStyles = {
+    width: isMobile ? "70px" : "150px",
+    height: isMobile ? "70px" : "150px",
+    marginLeft: isMobile ? "120px" : "220px",
   };
 
   return (
@@ -49,7 +50,7 @@ export default function Maintenance() {
           autoComplete="off"
         >
           <Grid>
-            <img alt="maintenance_img" src={maintenance_img} style={styles} />
+            <img alt="maintenance_img" src={maintenance_img} style={imgStyles} />
           </Grid>
           <Grid>
             <Typography
@@ -87,28 +88,33 @@ export default function Maintenance() {
                 textAlign: "center",
                 fontWeight: "bold",
                 fontFamily: "sans-serif",
-                fontSize: "20px",
+                fontSize: isMobile ? "16px" : "20px",
               }}
             >
               Please check your access
             </Typography>
           </Grid>
-          <Grid>
-            <TextField id="filled-basic" label="Email" variant="filled" />
-          </Grid>
+          
           <Grid>
             <TextField
               id="filled-basic"
               label="Password"
               type="password"
               variant="filled"
+              fullWidth
+              sx={{
+                width: isMobile ? "80%" : "350px",
+                backgroundColor: "white",
+               
+               
+              }}
             />
           </Grid>
           <DialogActions>
             <Button
               variant="contained"
               onClick={handleClose}
-              sx={{ marginRight: "220px", bgcolor:''}}
+              sx={{ margin: isMobile ? "auto" : "auto" }}
             >
               CheckOut
             </Button>
