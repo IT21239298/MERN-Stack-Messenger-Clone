@@ -104,8 +104,7 @@ export default function Maintenance() {
               fullWidth
               sx={{
                 width: isMobile ? "80%" : "350px",
-                backgroundColor: "white",
-               
+              
                
               }}
             />
