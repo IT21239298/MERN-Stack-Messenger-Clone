@@ -27,7 +27,13 @@ app.post('api/register',async(req, res) => {
        if(isAlredyExist) {
         res.status(400).send('User already exits')
        }else{
-        const newUser = new Users({fullName, email})
+        const newUser = new Users({fullName, email});
+        bcryptjs.hash(password,10,(err,hashedPassword) => {
+          newUser.set('password',hashedPassword);
+          newUser.save();
+          next()
+        })
+        return res.status(200).send('User Registered Successfully');
        }
     }
 
