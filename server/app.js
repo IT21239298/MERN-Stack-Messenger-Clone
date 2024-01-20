@@ -1,4 +1,5 @@
 const express = require("express");
+
 //create connection 
 const app = express();
 
@@ -21,7 +22,12 @@ app.post('api/register',async(req, res) => {
     if(!fullName || !email || !passowrd) {
       res.status(400).send('Please fill all required fields');
     }else {
-      const isAlredyExist = await User
+      const isAlredyExist = await Users.findOne({email}); 
+       if(isAlredyExist) {
+        res.status(400).send('User already exits')
+       }else{
+        const newUser = new Users({fullName, email})
+       }
     }
 
   }catch(error){
