@@ -16,9 +16,16 @@ app.get("/", (req, res) => {
 
 app.post('api/register',async(req, res) => {
   try{
+    const {fullName,email, password} = req.body;
+
+    if(!fullName || !email || !passowrd) {
+      res.status(400).send('Please fill all required fields');
+    }else {
+      const isAlredyExist = await User
+    }
 
   }catch(error){
-    
+
   }
 })
 
