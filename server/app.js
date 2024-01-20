@@ -14,6 +14,14 @@ app.get("/", (req, res) => {
   res.end();
 });
 
+app.post('api/register',async(req, res) => {
+  try{
+
+  }catch(error){
+    
+  }
+})
+
 app.listen(port, () => {
   console.log("listening on port " + port);
 });
