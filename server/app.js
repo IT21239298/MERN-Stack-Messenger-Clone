@@ -3,8 +3,9 @@ const bcryptjs = require('bcryptjs');
 
 //create connection 
 const app = express();
-
 require("./connection");
+
+const Users = require('./models/Users');
 
 const port = process.env.PORT || 8000;
 
