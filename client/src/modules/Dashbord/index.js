@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "../../assets/avatar.svg";
 import Input from "../../components/Input";
-import Maintenance from "../../components/maintenance";
+
 
 const Dashbord = () => {
   const contacts = [
