@@ -101,6 +101,8 @@ export default function Maintenance() {
               label="Password"
               type="password"
               variant="filled"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               fullWidth
               sx={{
                 width: isMobile ? "80%" : "350px",
