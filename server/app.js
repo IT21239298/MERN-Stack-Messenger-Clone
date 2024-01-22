@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
   res.end();
 });
 
+// registration route
 app.post('api/register',async(req, res) => {
   try{
     const {fullName,email, password} = req.body;
