@@ -1,5 +1,6 @@
 const express = require("express");
 const bcryptjs = require("bcryptjs");
+const jwt = require("jsonwebtoken")
 
 //create connection
 const app = express();
@@ -51,7 +52,18 @@ app.post('/api/login',async(req,res) =>{
     if(!email || !password){
       res.status(400).send('Please fill all required field')
     }else{
-      
+      const user = await Users.findOne({email});
+      if(!user) {
+        res.status(400).send('User email or password is incorrect');
+
+      }else {
+        const validateUser = await bcryptjs.compare(password, user.password);
+        if(!validateUser){
+          res.status(400).send('User email or password is incorect')
+        }else{
+
+        }
+      }
     }
 
 
