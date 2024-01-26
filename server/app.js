@@ -48,6 +48,11 @@ app.post("/api/register", async (req, res, next) => {
 app.post('/api/login',async(req,res) =>{
   try{
     const {email,password} = req.body;
+    if(!email || !password){
+      res.status(400).send('Please fill all required field')
+    }else{
+      
+    }
 
 
   }catch(error){
