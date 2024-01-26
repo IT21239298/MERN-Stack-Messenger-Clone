@@ -44,6 +44,16 @@ app.post("/api/register", async (req, res, next) => {
     console.log(error, "Error");
   }
 });
+//login 
+app.post('/api/login',async(req,res) =>{
+  try{
+    const {email,password} = req.body;
+
+
+  }catch(error){
+
+  }
+})
 
 app.listen(port, () => {
   console.log("listening on port " + port);
