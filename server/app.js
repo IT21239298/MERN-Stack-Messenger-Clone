@@ -18,11 +18,11 @@ app.get("/", (req, res) => {
 });
 
 // registration route
-app.post('api/register',async(req, res) => {
+app.post('/api/register',async(req, res,next) => {
   try{
     const {fullName,email, password} = req.body;
 
-    if(!fullName || !email || !passowrd) {
+    if(!fullName || !email || !password) {
       res.status(400).send('Please fill all required fields');
     }else {
       const isAlredyExist = await Users.findOne({email}); 
