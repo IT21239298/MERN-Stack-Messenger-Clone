@@ -1,11 +1,11 @@
 const express = require("express");
-const bcryptjs = require('bcryptjs');
+const bcryptjs = require("bcryptjs");
 
-//create connection 
+//create connection
 const app = express();
 require("./connection");
 
-const Users = require('./models/Users');
+const Users = require("./models/Users");
 
 const port = process.env.PORT || 8000;
 
@@ -18,31 +18,30 @@ app.get("/", (req, res) => {
 });
 
 // registration route
-app.post('/api/register',async(req, res,next) => {
-  try{
-    const {fullName,email, password} = req.body;
+app.post("/api/register", async (req, res, next) => {
+  try {
+    const { fullName, email, password } = req.body;
 
-    if(!fullName || !email || !password) {
-      res.status(400).send('Please fill all required fields');
-    }else {
-      const isAlredyExist = await Users.findOne({email}); 
-       if(isAlredyExist) {
-        res.status(400).send('User already exits')
-       }else{
-        const newUser = new Users({fullName, email});
-        bcryptjs.hash(password,10,(err,hashedPassword) => {
-          newUser.set('password',hashedPassword);
+    if (!fullName || !email || !password) {
+      res.status(400).send("Please fill all required fields");
+    } else {
+      const isAlreadyExist = await Users.findOne({ email });
+      if (isAlreadyExist) {
+        res.status(400).send("User already exists");
+      } else {
+        const newUser = new Users({ fullName, email });
+        bcryptjs.hash(password, 10, (err, hashedPassword) => {
+          newUser.set("password", hashedPassword);
           newUser.save();
-          next()
-        })
-        return res.status(200).send(' Registered Successfully..!');
-       }
+          next();
+        });
+        return res.status(200).send("User registered successfully");
+      }
     }
-
-  }catch(error){
-
+  } catch (error) {
+    console.log(error, "Error");
   }
-})
+});
 
 app.listen(port, () => {
   console.log("listening on port " + port);
