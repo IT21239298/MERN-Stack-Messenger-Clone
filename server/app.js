@@ -7,6 +7,7 @@ const app = express();
 require("./connection");
 
 const Users = require("./models/Users");
+const { use } = require("passport");
 
 const port = process.env.PORT || 8000;
 
@@ -46,7 +47,7 @@ app.post("/api/register", async (req, res, next) => {
   }
 });
 //login 
-app.post('/api/login',async(req,res) =>{
+app.post('/api/login',async(req,res,next) =>{
   try{
     const {email,password} = req.body;
     if(!email || !password){
@@ -61,6 +62,20 @@ app.post('/api/login',async(req,res) =>{
         if(!validateUser){
           res.status(400).send('User email or password is incorect')
         }else{
+          const payload = {
+            userId: user._id,
+            email: user.email
+          }
+          const JWT_SECRET_KEY  = process.env.JWT_SECRET_KEY || 'THIS_IS_A_JWT_SECRET_KEY';
+
+          jwt.sign(payload, JWT_SECRET_KEY, {expiresIn: 84600}, async (err,token) =>{
+            await Users.updateOne({_id:user._id},{
+              $set:{token}
+            })
+            user.save();
+            next()
+          })
+          res.status(200).json({user:{email:user.email,fullName: user.fullName},token:user.token})
 
         }
       }
@@ -68,7 +83,7 @@ app.post('/api/login',async(req,res) =>{
 
 
   }catch(error){
-
+         console.log(error,'Error')
   }
 })
 
