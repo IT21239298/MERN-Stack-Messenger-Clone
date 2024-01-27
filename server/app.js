@@ -7,6 +7,7 @@ const app = express();
 require("./connection");
 
 const Users = require("./models/Users");
+const Conversations = require("./models/Conversation")
 
 
 const { use } = require("passport");
@@ -94,7 +95,7 @@ app.post('/api/conversation',async (req, res) => {
   try{
 
     const {senderId, receiverId}  = req.body;
-    const newConversation = new Convrsation({senderId, receiverId})
+    const newConversation = new Conversations({senderId, receiverId})
   }catch(error){
 
   }
