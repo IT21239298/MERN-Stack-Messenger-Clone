@@ -7,6 +7,8 @@ const app = express();
 require("./connection");
 
 const Users = require("./models/Users");
+
+
 const { use } = require("passport");
 
 const port = process.env.PORT || 8000;
@@ -84,6 +86,17 @@ app.post('/api/login',async(req,res,next) =>{
 
   }catch(error){
          console.log(error,'Error')
+  }
+})
+
+//conversation
+app.post('/api/conversation',async (req, res) => {
+  try{
+
+    const {senderId, receiverId}  = req.body;
+    const newConversation = new Convrsation({senderId, receiverId})
+  }catch(error){
+
   }
 })
 
