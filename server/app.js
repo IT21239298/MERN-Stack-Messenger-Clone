@@ -95,8 +95,13 @@ app.post('/api/conversation',async (req, res) => {
   try{
 
     const {senderId, receiverId}  = req.body;
-    const newConversation = new Conversations({senderId, receiverId})
+    const newConversation = new Conversations({members:[senderId, receiverId]})
+    await newConversation.save();
+    res.status(200).send('Conversation created Successfully')
+    
   }catch(error){
+    console.log(error,"Error")
+
 
   }
 })
