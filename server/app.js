@@ -90,7 +90,7 @@ app.post('/api/login',async(req,res,next) =>{
   }
 })
 
-//conversation
+// post conversation
 app.post('/api/conversation',async (req, res) => {
   try{
 
@@ -106,8 +106,12 @@ app.post('/api/conversation',async (req, res) => {
   }
 })
 
+// get conversation 
 app.get('/api/conversation/:userId', async (req,res) => {
   try{
+    const userId = req.params.userId;
+    const conversations = await Conversations.find({members: { $in:[userId]}});
+    res.status(200).json(conversations)
 
   }catch(error){
     console.log(error, 'Error')
