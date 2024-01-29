@@ -121,6 +121,15 @@ app.get('/api/conversation/:userId', async (req,res) => {
     console.log(error, 'Error')
 }
 })
+//post message
+app.post('/api/message',async (req,res) => {
+  try{
+
+  }catch (error) {
+    console.log(error,'Error')
+  }
+})
+
 app.listen(port, () => {
   console.log("listening on port " + port);
 });
