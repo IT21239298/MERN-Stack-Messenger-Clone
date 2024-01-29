@@ -8,6 +8,7 @@ require("./connection");
 
 const Users = require("./models/Users");
 const Conversations = require("./models/Conversation")
+const Messages  = require("./models/Messages")
 
 
 const { use } = require("passport");
