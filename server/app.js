@@ -85,12 +85,10 @@ app.post("/api/login", async (req, res, next) => {
               next();
             }
           );
-          res
-            .status(200)
-            .json({
-              user: { email: user.email, fullName: user.fullName },
-              token: user.token,
-            });
+          res.status(200).json({
+            user: { email: user.email, fullName: user.fullName },
+            token: user.token,
+          });
         }
       }
     }
@@ -154,13 +152,16 @@ app.post("/api/message", async (req, res) => {
 });
 
 //get message
-app.get('/api/message/:conversationId', async (req,res) => {
-  try{
+app.get("/api/message/:conversationId", async (req, res) => {
+  try {
+    const conversationId = req.params.conversationId;
+    const messages = await Messages.find({ conversationId });
 
-  }catch(error){
-    console.log("Error", error)
+    res.status(200).json(messages);
+  } catch (error) {
+    console.log("Error", error);
   }
-})
+});
 
 app.listen(port, () => {
   console.log("listening on port " + port);
