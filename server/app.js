@@ -151,7 +151,7 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
-//get message only users and messsage ...
+//get message only users and messsage 
 app.get("/api/message/:conversationId", async (req, res) => {
   try {
     const conversationId = req.params.conversationId;
