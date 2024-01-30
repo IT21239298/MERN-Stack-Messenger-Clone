@@ -145,7 +145,7 @@ app.post("/api/message", async (req, res) => {
     const { conversationId, senderId, message } = req.body;
     const newMessage = new Messages({ conversationId, senderId, message });
     await newMessage.save();
-    res.status(200).send("Message sent Successfuly");
+    res.status(200).send("Message sent Successfuly...!");
   } catch (error) {
     console.log(error, "Error");
   }
