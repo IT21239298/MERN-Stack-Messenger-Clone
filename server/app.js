@@ -167,6 +167,17 @@ app.get("/api/message/:conversationId", async (req, res) => {
   }
 });
 
+//get users
+app.get('/api/users',async (req,res) => {
+  try{
+    const users= await Users.find();
+    
+
+  }catch(error){
+        console.log("Error",error)
+  }
+})
+
 app.listen(port, () => {
   console.log("listening on port " + port);
 });
