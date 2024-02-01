@@ -12,6 +12,11 @@ const Form = ({ isSignInPage = false }) => {
     password: "",
   });
 const navigate = useNavigate()
+
+const handleSubmit = async() => {
+  
+}
+
   return (
     <div className="bg-light h-screen flex items-center justify-center">
       <div className="bg-white w-[600px] h-[800px] shadow-lg rounded-lg flex flex-col justify-center items-center">
@@ -25,7 +30,7 @@ const navigate = useNavigate()
         </div>
         <form
           className="flex flex-col items-center w-full"
-          onSubmit={() => console.log("submited")}
+          onSubmit={() => handleSubmit()}
         >
           {isSignInPage && (
             <Input
