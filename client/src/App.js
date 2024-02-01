@@ -33,18 +33,18 @@ function App() {
       <Route
         path="/users/sign_up"
         element={
-          <ProtectedRoute>
+         // <ProtectedRoute>
             <Form isSignInPage={true} />
-          </ProtectedRoute>
+        //  </ProtectedRoute>
         }
       />
 
       <Route
         path="/users/sign_in"
         element={
-          <ProtectedRoute>
+        //  <ProtectedRoute>
             <Form isSignInPage={false} />
-          </ProtectedRoute>
+         // </ProtectedRoute>
         }
       />
     </Routes>
