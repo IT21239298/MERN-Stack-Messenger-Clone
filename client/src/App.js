@@ -4,10 +4,10 @@ import Form from "./modules/Form";
 import Dashbord from "./modules/Dashbord";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ childen }) => {
-  const isLoggedIn = localStorage.getItem("user:token") !== null || true;
+const ProtectedRoute = ({ childen, auth = false }) => {
+  const isLoggedIn = localStorage.getItem("user:token") !== null || false;
 
-  if (!isLoggedIn) {
+  if (!isLoggedIn && auth) {
     return <Navigate to={"/users/sign_in"} />;
   } else if (
     isLoggedIn &&
@@ -25,9 +25,9 @@ function App() {
       <Route
         path="/"
         element={
-          //<ProtectedRoute>
+          <ProtectedRoute auth={true}>
           <Dashbord />
-          // </ProtectedRoute>
+          </ProtectedRoute>
         }
       />
       <Route
