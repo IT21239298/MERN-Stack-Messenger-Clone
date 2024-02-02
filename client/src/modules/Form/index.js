@@ -15,7 +15,14 @@ const navigate = useNavigate()
 
 const handleSubmit = async() => {
   console.log('data :>>', data);
-  const res = await fetch(`http://localhost:8000/api/${isSignInPage ? 'login' : 'register'}`)
+  const res = await fetch(`http://localhost:8000/api/${isSignInPage ? 'login' : 'register'}`,{
+    method: 'POST',
+    headers: {
+
+      'Content-Type': 'application/json'
+    },
+    body:JSON.stringify(data)
+  })
 
 }
 
