@@ -13,8 +13,9 @@ const Form = ({ isSignInPage = false }) => {
   });
 const navigate = useNavigate()
 
-const handleSubmit = async() => {
+const handleSubmit = async(e) => {
   console.log('data :>>', data);
+  e.preventDefault()
   const res = await fetch(`http://localhost:8000/api/${isSignInPage ? 'login' : 'register'}`,{
     method: 'POST',
     headers: {
@@ -41,7 +42,7 @@ const handleSubmit = async() => {
         </div>
         <form
           className="flex flex-col items-center w-full"
-          onSubmit={() => handleSubmit()}
+          onSubmit={(e) => handleSubmit(e)}
         >
           {isSignInPage && (
             <Input
