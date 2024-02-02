@@ -1,6 +1,7 @@
 const express = require("express");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 //create connection
 const app = express();
@@ -16,6 +17,7 @@ const port = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("welcome");
@@ -140,58 +142,73 @@ app.get("/api/conversation/:userId", async (req, res) => {
   }
 });
 //post message
-app.post('/api/message', async (req, res) => {
+app.post("/api/message", async (req, res) => {
   try {
-      const { conversationId, senderId, message, receiverId = '' } = req.body;
-      if (!senderId || !message) return res.status(400).send('Please fill all required fields')
-      if (conversationId === 'new' && receiverId) {
-          const newCoversation = new Conversations({ members: [senderId, receiverId] });
-          await newCoversation.save();
-          const newMessage = new Messages({ conversationId: newCoversation._id, senderId, message });
-          await newMessage.save();
-          return res.status(200).send('Message sent successfully');
-      } else if (!conversationId && !receiverId) {
-          return res.status(400).send('Please fill all required fields')
-      }
-      const newMessage = new Messages({ conversationId, senderId, message });
+    const { conversationId, senderId, message, receiverId = "" } = req.body;
+    if (!senderId || !message)
+      return res.status(400).send("Please fill all required fields");
+    if (conversationId === "new" && receiverId) {
+      const newCoversation = new Conversations({
+        members: [senderId, receiverId],
+      });
+      await newCoversation.save();
+      const newMessage = new Messages({
+        conversationId: newCoversation._id,
+        senderId,
+        message,
+      });
       await newMessage.save();
-      res.status(200).send('Message sent successfully');
+      return res.status(200).send("Message sent successfully");
+    } else if (!conversationId && !receiverId) {
+      return res.status(400).send("Please fill all required fields");
+    }
+    const newMessage = new Messages({ conversationId, senderId, message });
+    await newMessage.save();
+    res.status(200).send("Message sent successfully");
   } catch (error) {
-      console.log(error, 'Error')
+    console.log(error, "Error");
   }
-})
+});
 
-//get message only users and messsage 
+//get message only users and messsage
 app.get("/api/message/:conversationId", async (req, res) => {
   try {
     const conversationId = req.params.conversationId;
-    if(conversationId === 'new') return res.status(200).json([])
+    if (conversationId === "new") return res.status(200).json([]);
     const messages = await Messages.find({ conversationId });
-    const messageUserData = Promise.all(messages.map(async(message) => {
-      const user  = await Users.findById(message.senderId);
-      return {user: {email:user.email, fullName: user.fullName}, message:message.message}
-    }))
+    const messageUserData = Promise.all(
+      messages.map(async (message) => {
+        const user = await Users.findById(message.senderId);
+        return {
+          user: { email: user.email, fullName: user.fullName },
+          message: message.message,
+        };
+      })
+    );
 
-    res.status(200).json( await messageUserData);
+    res.status(200).json(await messageUserData);
   } catch (error) {
     console.log("Error", error);
   }
 });
 
 //get users
-app.get('/api/users',async (req,res) => {
-  try{
-    const users= await Users.find();
-    const usersData = Promise.all(users.map(async (user) => {
-      return {user: {email: user.email, fullName: user.fullName}, userId: user._id}
-    }))
-    res.status(200).json(await usersData)
-
-
-  }catch(error){
-        console.log("Error",error)
+app.get("/api/users", async (req, res) => {
+  try {
+    const users = await Users.find();
+    const usersData = Promise.all(
+      users.map(async (user) => {
+        return {
+          user: { email: user.email, fullName: user.fullName },
+          userId: user._id,
+        };
+      })
+    );
+    res.status(200).json(await usersData);
+  } catch (error) {
+    console.log("Error", error);
   }
-})
+});
 
 app.listen(port, () => {
   console.log("listening on port " + port);
