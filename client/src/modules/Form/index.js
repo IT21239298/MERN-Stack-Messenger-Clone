@@ -15,7 +15,8 @@ const navigate = useNavigate()
 
 const handleSubmit = async() => {
   console.log('data :>>', data);
-  
+  const res = await fetch(`http://localhost:8000/api/${isSignInPage ? 'login' : 'register'}`)
+
 }
 
   return (
