@@ -14,6 +14,7 @@ const Form = ({ isSignInPage = false }) => {
 const navigate = useNavigate()
 
 const handleSubmit = async() => {
+  console.log('data :>>', data);
   
 }
 
