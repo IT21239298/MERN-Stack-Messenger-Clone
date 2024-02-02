@@ -23,6 +23,8 @@ const handleSubmit = async() => {
     },
     body:JSON.stringify(data)
   })
+  const resData = await res.json()
+  console.log('data :>>', resData);
 
 }
 
