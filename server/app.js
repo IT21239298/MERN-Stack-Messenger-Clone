@@ -84,13 +84,13 @@ app.post("/api/login", async (req, res, next) => {
                 }
               );
               user.save();
-              next();
+              return res.status(200).json({
+                user: { email: user.email, fullName: user.fullName },
+                token: token,
+              });
             }
           );
-          res.status(200).json({
-            user: { email: user.email, fullName: user.fullName },
-            token: user.token,
-          });
+          
         }
       }
     }
