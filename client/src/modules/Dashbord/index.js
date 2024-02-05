@@ -35,25 +35,30 @@ const Dashbord = () => {
       img: Avatar,
     },
   ];
-
-  useEffect(() =>{
-    const fetchConversations = async()=> {
-      `http://localhost:8000/api/conversation/${loggedInUser.id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-       
-      }
-    }
-  },[])
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem("user:detail"));
+    const fetchConversations = async () => {
+      const res = await fetch(
+        `http://localhost:8000/api/conversations/${loggedInUser?.id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const resData = await res.json();
+      setConversations(resData);
+    };
+    fetchConversations();
+  }, []);
   //get user details
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("user:detail"))
   );
   const [conversations, setConversations] = useState([]);
   console.log("User :>>", user);
+  console.log("conversations :>>".conversations);
 
   return (
     <div className="w-screen flex">

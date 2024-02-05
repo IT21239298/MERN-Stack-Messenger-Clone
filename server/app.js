@@ -114,7 +114,7 @@ app.post("/api/conversation", async (req, res) => {
 });
 
 // get conversation
-app.get("/api/conversation/:userId", async (req, res) => {
+app.get("/api/conversations/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;
     const conversations = await Conversations.find({
