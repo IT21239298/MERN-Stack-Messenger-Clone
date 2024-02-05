@@ -38,9 +38,16 @@ const Dashbord = () => {
 
   useEffect(() =>{
     const fetchConversations = async()=> {
-      
+      `http://localhost:8000/api/conversation/${loggedInUser.id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+       
+      }
     }
-  })
+  },[])
   //get user details
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("user:detail"))

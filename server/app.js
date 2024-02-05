@@ -85,7 +85,7 @@ app.post("/api/login", async (req, res, next) => {
               );
               user.save();
               return res.status(200).json({
-                user: { email: user.email, fullName: user.fullName },
+                user: { id:user._id, email: user.email, fullName: user.fullName },
                 token: token,
               });
             }
