@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from "../../assets/avatar.svg";
 import Input from "../../components/Input";
 
@@ -36,9 +36,16 @@ const Dashbord = () => {
     },
   ];
 
+  useEffect(() =>{
+    const fetchConversations = async()=> {
+      
+    }
+  })
+  //get user details
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("user:detail"))
   );
+  const [conversations, setConversations] = useState([]);
   console.log("User :>>", user);
 
   return (
