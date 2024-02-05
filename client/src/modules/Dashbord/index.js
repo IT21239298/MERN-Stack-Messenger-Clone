@@ -58,7 +58,7 @@ const Dashbord = () => {
   );
   const [conversations, setConversations] = useState([]);
   console.log("User :>>", user);
-  console.log("conversations :>>".conversations);
+  console.log("conversations :>>",conversations);
 
   return (
     <div className="w-screen flex">
