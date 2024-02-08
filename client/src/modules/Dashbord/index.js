@@ -96,7 +96,7 @@ const Dashbord = () => {
                 );
               })
             ) : (
-              <div className="'text-center txt-lg font-semibold">
+              <div className="'text-center txt-lg font-semibold mt-24">
                 No Conversation
               </div>
             )}
