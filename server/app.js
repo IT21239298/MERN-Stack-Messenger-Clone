@@ -85,12 +85,15 @@ app.post("/api/login", async (req, res, next) => {
               );
               user.save();
               return res.status(200).json({
-                user: { id:user._id, email: user.email, fullName: user.fullName },
+                user: {
+                  id: user._id,
+                  email: user.email,
+                  fullName: user.fullName,
+                },
                 token: token,
               });
             }
           );
-          
         }
       }
     }
@@ -180,7 +183,6 @@ app.get("/api/message/:conversationId", async (req, res) => {
       messages.map(async (message) => {
         const user = await Users.findById(message.senderId);
         return {
-          user: { email: user.email, fullName: user.fullName },
           message: message.message,
         };
       })

@@ -57,11 +57,12 @@ const Dashbord = () => {
     JSON.parse(localStorage.getItem("user:detail"))
   );
   const [conversations, setConversations] = useState([]);
+  const [messages,setMessages] = useState([])
   console.log("User :>>", user);
   console.log("conversations :>>", conversations);
 
   const fetchMessage = async(conversationId) => {
-    const res = await fetch ( `http://localhost:8000/api/message`, {
+    const res = await fetch ( `http://localhost:8000/api/message/${conversationId}`, {
       method: 'GET',
       headers: {
         'Content-Type' : 'application/json',
@@ -70,6 +71,7 @@ const Dashbord = () => {
     });
     const resData = await res.json()
     console.log('resData :>>', resData)
+    setMessages(resData)
   }
 
   return (
