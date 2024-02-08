@@ -60,6 +60,18 @@ const Dashbord = () => {
   console.log("User :>>", user);
   console.log("conversations :>>", conversations);
 
+  const fetchMessage = async(conversationId) => {
+    const res = await fetch ( `http://localhost:8000/api/message`, {
+      method: 'GET',
+      headers: {
+        'Content-Type' : 'application/json',
+      },
+      body:JSON.stringify({conversationId, senderId: user?.id,message:'Hello', receiverId:''})
+    });
+    const resData = await res.json()
+    console.log('resData :>>', resData)
+  }
+
   return (
     <div className="w-screen flex">
       <div className="w-[25%]  h-screen bg-secondary">
@@ -77,12 +89,12 @@ const Dashbord = () => {
           <div className="text-primary text-lg">Message</div>
           <div>
             {!conversations.length > 0 ? (
-              conversations.map((conversation, user) => {
-                console.log("conversation :>>", conversation);
+              conversations.map((conversationId, user) => {
+                console.log("conversation :>>", conversationId);
                 return (
                   <div className="flex  items-center py-8 border-b border-b-gray-300">
                     <div className="cursor-pointer flex items-center">
-                      <div className="">
+                      <div className=" cursor-pointer flex items-center" onClick={() => fetchMessage(conversationId)} >
                         <img src={"img"} width={60} height={60} />
                       </div>
                       <div className="ml-8">
