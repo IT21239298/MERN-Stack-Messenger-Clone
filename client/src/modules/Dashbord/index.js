@@ -58,7 +58,7 @@ const Dashbord = () => {
   );
   const [conversations, setConversations] = useState([]);
   console.log("User :>>", user);
-  console.log("conversations :>>",conversations);
+  console.log("conversations :>>", conversations);
 
   return (
     <div className="w-screen flex">
@@ -76,24 +76,30 @@ const Dashbord = () => {
         <div className="mx-14 mt-10">
           <div className="text-primary text-lg">Message</div>
           <div>
-            {conversations.map((conversation, user) => {
-              console.log('conversation :>>',conversation)
-              return (
-                <div className="flex  items-center py-8 border-b border-b-gray-300">
-                  <div className="cursor-pointer flex items-center">
-                    <div className="">
-                      <img src={"img"} width={60} height={60} />
-                    </div>
-                    <div className="ml-8">
-                      <h3 className="text-2xl">{user?.fullName}</h3>
-                      <p className="text-lg font-light txt-gray-600">
-                        {user?.email}
-                      </p>
+            {!conversations.length > 0 ? (
+              conversations.map((conversation, user) => {
+                console.log("conversation :>>", conversation);
+                return (
+                  <div className="flex  items-center py-8 border-b border-b-gray-300">
+                    <div className="cursor-pointer flex items-center">
+                      <div className="">
+                        <img src={"img"} width={60} height={60} />
+                      </div>
+                      <div className="ml-8">
+                        <h3 className="text-2xl">{user?.fullName}</h3>
+                        <p className="text-lg font-light txt-gray-600">
+                          {user?.email}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div className="'text-center txt-lg font-semibold">
+                No Conversation
+              </div>
+            )}
           </div>
         </div>
       </div>
