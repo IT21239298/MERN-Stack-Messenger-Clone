@@ -76,17 +76,18 @@ const Dashbord = () => {
         <div className="mx-14 mt-10">
           <div className="text-primary text-lg">Message</div>
           <div>
-            {contacts.map(({ name, status, img }) => {
+            {conversations.map((conversation) => {
+              console.log('conversation :>>',conversation)
               return (
                 <div className="flex  items-center py-8 border-b border-b-gray-300">
                   <div className="cursor-pointer flex items-center">
                     <div className="">
-                      <img src={img} width={60} height={60} />
+                      <img src={"img"} width={60} height={60} />
                     </div>
                     <div className="ml-8">
-                      <h3 className="text-2xl">{name}</h3>
+                      <h3 className="text-2xl">{"name"}</h3>
                       <p className="text-lg font-light txt-gray-600">
-                        {status}
+                        {"status"}
                       </p>
                     </div>
                   </div>
