@@ -76,7 +76,7 @@ const Dashbord = () => {
         <div className="mx-14 mt-10">
           <div className="text-primary text-lg">Message</div>
           <div>
-            {conversations.map((conversation) => {
+            {conversations.map((conversation, user) => {
               console.log('conversation :>>',conversation)
               return (
                 <div className="flex  items-center py-8 border-b border-b-gray-300">
@@ -85,9 +85,9 @@ const Dashbord = () => {
                       <img src={"img"} width={60} height={60} />
                     </div>
                     <div className="ml-8">
-                      <h3 className="text-2xl">{"name"}</h3>
+                      <h3 className="text-2xl">{user?.fullName}</h3>
                       <p className="text-lg font-light txt-gray-600">
-                        {"status"}
+                        {user?.email}
                       </p>
                     </div>
                   </div>
