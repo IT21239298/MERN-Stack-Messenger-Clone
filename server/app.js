@@ -146,7 +146,7 @@ app.post('/api/conversation', async (req, res) => {
         console.log(error, 'Error')
     }
 })
-
+//get conversation
 app.get('/api/conversations/:userId', async (req, res) => {
     try {
         const userId = req.params.userId;
@@ -161,7 +161,7 @@ app.get('/api/conversations/:userId', async (req, res) => {
         console.log(error, 'Error')
     }
 })
-
+//post messages
 app.post('/api/message', async (req, res) => {
     try {
         const { conversationId, senderId, message, receiverId = '' } = req.body;
@@ -182,7 +182,7 @@ app.post('/api/message', async (req, res) => {
         console.log(error, 'Error')
     }
 })
-
+//get message conversation
 app.get('/api/message/:conversationId', async (req, res) => {
     try {
         const checkMessages = async (conversationId) => {
@@ -209,7 +209,7 @@ app.get('/api/message/:conversationId', async (req, res) => {
         console.log('Error', error)
     }
 })
-
+//get users
 app.get('/api/users/:userId', async (req, res) => {
     try {
         const userId = req.params.userId;
