@@ -24,7 +24,7 @@ app.use(cors());
 
 const port = process.env.PORT || 8000;
 
-// Socket.io
+// Socket.io connection
 let users = [];
 io.on('connection', socket => {
     console.log('User connected', socket.id);

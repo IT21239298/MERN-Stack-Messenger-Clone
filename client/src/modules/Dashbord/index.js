@@ -310,7 +310,7 @@ const Dashboard = () => {
             })
           ) : (
             <div className="text-center text-lg font-semibold mt-24">
-              No Conversations
+              No Conversations...!
             </div>
           )}
         </div>
